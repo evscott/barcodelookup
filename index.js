@@ -1,6 +1,13 @@
+'use strict';
+
 const fetch = require('node-fetch');
 let url='https://api.barcodelookup.com/v2/products?';
 
+/**
+ * Performs a barcodelookup request targeting the barcodelookup API.
+ * @param {*} deconstructed object of permitted arguments.
+ * @type {{lookup: module.exports.lookup}}
+ */
 module.exports = {
     lookup: ({ barcode: barcode, mpn: mpn, asin: asin, productName: productName, category: category,
                  search: search, page: page, geo: geo, formatted: formatted, key: key}) => {

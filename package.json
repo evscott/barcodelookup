@@ -1,6 +1,6 @@
 {
   "name": "barcodelookup",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Light module for looking up barcodes using barcodelookup.",
   "main": "index.js",
   "scripts": {
