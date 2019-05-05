@@ -1,6 +1,6 @@
 {
   "name": "barcodelookup",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Light module for looking up barcodes using barcodelookup.",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,22 @@
   "author": "Eliot Scott",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.0"
   },
   "dependencies": {
     "node-fetch": "^2.5.0",
     "xmlhttprequest": "^1.8.0"
+  },
+  "prettier": {
+    "parser": "flow",
+    "useTabs:": true,
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "always"
   }
 }
