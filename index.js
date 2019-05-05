@@ -5,14 +5,14 @@ let url = 'https://api.barcodelookup.com/v2/';
 
 module.exports = {
     /**
-     * Performs a rate-limit query to resolve rate limits of associated API-key.
+     * Performs a rate-limit query to resolve rate limits of associated api-key.
      * @param key associated with limits
      * @returns {Promise<T | {data: any, statusCode: number}>|null} data
      * is response payload, statusCode is response status code.
      */
     rateLimits: ({ key: key }) => {
         if (!key) {
-            console.error('API-key is required to fulfill rateLimits.');
+            console.error('api-key is required to fulfill rateLimits.');
             return null;
         }
         url += 'rate-limits?key=' + key;
@@ -58,7 +58,7 @@ module.exports = {
         key: key
     }) => {
         if (!key) {
-            console.error('API-key is required to fulfill lookup.');
+            console.error('api-key is required to fulfill lookup.');
             return null;
         }
 
