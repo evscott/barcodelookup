@@ -1,7 +1,7 @@
 {
   "name": "barcodelookup",
-  "version": "0.2.0",
-  "description": "Light module for looking up barcodes using barcodelookup.",
+  "version": "1.0.0",
+  "description": "A lightweight importable Node.js package that can be used to resolve barcode data",
   "main": "index.js",
   "scripts": {
     "start": "nodemon main",
@@ -16,8 +16,7 @@
     "prettier": "^1.17.0"
   },
   "dependencies": {
-    "node-fetch": "^2.5.0",
-    "xmlhttprequest": "^1.8.0"
+    "node-fetch": "^2.5.0"
   },
   "prettier": {
     "parser": "flow",
