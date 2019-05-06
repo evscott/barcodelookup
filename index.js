@@ -16,14 +16,21 @@ module.exports = {
             return null;
         }
         url += 'rate-limits?key=' + key;
+
         return fetch(url)
             .then((response) => {
-                const statusCode = response.status;
-                const data = response.json();
-                return Promise.all([statusCode, data]);
-            })
-            .then((res) => {
-                if (res[0] === 200) return { statusCode: res[0], data: res[1] };
+                switch (response.status) {
+                    case 200:
+                        return Promise.all([response.status, response.json()]);
+                        break;
+                    default:
+                        return Promise.all([
+                            response.status,
+                            response.statusText
+                        ]);
+                }
+            }).then((res) => {
+                return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
                 return { statusCode: 400, data: error };
@@ -219,12 +226,18 @@ module.exports = {
 
         return fetch(url)
             .then((response) => {
-                const statusCode = response.status;
-                const data = response.json();
-                return Promise.all([statusCode, data]);
-            })
-            .then((res) => {
-                if (res[0] === 200) return { statusCode: res[0], data: res[1] };
+                switch (response.status) {
+                    case 200:
+                        return Promise.all([response.status, response.json()]);
+                        break;
+                    default:
+                        return Promise.all([
+                            response.status,
+                            response.statusText
+                        ]);
+                }
+            }).then((res) => {
+                return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
                 return { statusCode: 400, data: error };
