@@ -11,10 +11,11 @@ module.exports = {
      * is response payload, statusCode is response status code.
      */
     rateLimits: ({ key: key }) => {
-        if (!key) {
-            console.error('API-key is required to fulfill rateLimits.');
-            return null;
-        }
+        if (!key)
+            return {
+                statusCode: 418,
+                data: 'API-key is required to fulfill rateLimits.'
+            };
         url += 'rate-limits?key=' + key;
 
         return fetch(url)
@@ -29,7 +30,8 @@ module.exports = {
                             response.statusText
                         ]);
                 }
-            }).then((res) => {
+            })
+            .then((res) => {
                 return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
@@ -64,10 +66,11 @@ module.exports = {
         formatted: formatted,
         key: key
     }) => {
-        if (!key) {
-            console.error('API-key is required to fulfill lookup.');
-            return null;
-        }
+        if (!key)
+            return {
+                statusCode: 418,
+                data: 'API-key is required to fulfill rateLimits.'
+            };
 
         url += 'products?';
 
@@ -236,7 +239,8 @@ module.exports = {
                             response.statusText
                         ]);
                 }
-            }).then((res) => {
+            })
+            .then((res) => {
                 return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
