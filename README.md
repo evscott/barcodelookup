@@ -1,3 +1,4 @@
+![David](https://david-dm.org/evscott/barcodelookup.svg)
 # barcodelookup
 
 An installable Node.js package that easily handles [barcodelookup](https://www.barcodelookup.com/) requests.
