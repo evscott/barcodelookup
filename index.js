@@ -11,11 +11,6 @@ module.exports = {
      * is response payload, statusCode is response status code.
      */
     rateLimits: ({ key: key }) => {
-        if (!key)
-            return {
-                statusCode: 418,
-                data: 'API-key is required to fulfill rateLimits.'
-            };
         url += 'rate-limits?key=' + key;
 
         return fetch(url)
@@ -66,11 +61,6 @@ module.exports = {
         formatted: formatted,
         key: key
     }) => {
-        if (!key)
-            return {
-                statusCode: 418,
-                data: 'API-key is required to fulfill rateLimits.'
-            };
 
         url += 'products?';
 
