@@ -1,6 +1,6 @@
 {
   "name": "barcodelookup",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A lightweight importable Node.js package that can be used to resolve barcode data",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,14 @@
     "singleQuote": true,
     "bracketSpacing": true,
     "arrowParens": "always"
-  }
+  },
+  "keywords": [
+    "barcodelookup",
+    "barcode",
+    "productid",
+    "product",
+    "UPC",
+    "EAN",
+    "ISBN"
+  ]
 }
