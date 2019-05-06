@@ -16,7 +16,8 @@
     "prettier": "^1.17.0"
   },
   "dependencies": {
-    "node-fetch": "^2.5.0"
+    "node-fetch": "^2.5.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "prettier": {
     "parser": "flow",

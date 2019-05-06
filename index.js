@@ -5,25 +5,29 @@ let url = 'https://api.barcodelookup.com/v2/';
 
 module.exports = {
     /**
-     * Performs a rate-limit query to resolve rate limits of associated API-key.
+     * Performs a rate-limit query to resolve rate limits of associated api-key.
      * @param key associated with limits
      * @returns {Promise<T | {data: any, statusCode: number}>|null} data
      * is response payload, statusCode is response status code.
      */
     rateLimits: ({ key: key }) => {
-        if (!key) {
-            console.error('API-key is required to fulfill rateLimits.');
-            return null;
-        }
         url += 'rate-limits?key=' + key;
+
         return fetch(url)
             .then((response) => {
-                const statusCode = response.status;
-                const data = response.json();
-                return Promise.all([statusCode, data]);
+                switch (response.status) {
+                    case 200:
+                        return Promise.all([response.status, response.json()]);
+                        break;
+                    default:
+                        return Promise.all([
+                            response.status,
+                            response.statusText
+                        ]);
+                }
             })
             .then((res) => {
-                if (res[0] === 200) return { statusCode: res[0], data: res[1] };
+                return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
                 return { statusCode: 400, data: error };
@@ -57,10 +61,6 @@ module.exports = {
         formatted: formatted,
         key: key
     }) => {
-        if (!key) {
-            console.error('API-key is required to fulfill lookup.');
-            return null;
-        }
 
         url += 'products?';
 
@@ -219,12 +219,19 @@ module.exports = {
 
         return fetch(url)
             .then((response) => {
-                const statusCode = response.status;
-                const data = response.json();
-                return Promise.all([statusCode, data]);
+                switch (response.status) {
+                    case 200:
+                        return Promise.all([response.status, response.json()]);
+                        break;
+                    default:
+                        return Promise.all([
+                            response.status,
+                            response.statusText
+                        ]);
+                }
             })
             .then((res) => {
-                if (res[0] === 200) return { statusCode: res[0], data: res[1] };
+                return { statusCode: res[0], data: res[1] };
             })
             .catch((error) => {
                 return { statusCode: 400, data: error };
