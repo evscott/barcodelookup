@@ -5,7 +5,7 @@ let url = 'https://api.barcodelookup.com/v2/';
 
 module.exports = {
     /**
-     * Performs a rate-limit query to resolve rate limits of associated API-key.
+     * Performs a rate-limit query to resolve rate limits of associated api-key.
      * @param key associated with limits
      * @returns {Promise<T | {data: any, statusCode: number}>|null} data
      * is response payload, statusCode is response status code.
