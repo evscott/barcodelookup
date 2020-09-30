@@ -143,8 +143,9 @@ See the official [barcodelookup api documentation](https://www.barcodelookup.com
 ## Authors
 
 * **[Eliot Scott](https://github.com/evscott)** - *Initial work*
+* **[Robin C Samuel](https://github.com/robincsamuel)** - *Second Contributor*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/evscott/barcodelookup/graphs/contributors) who participated in this project.
 
 ## License
 
