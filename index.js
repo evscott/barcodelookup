@@ -1,7 +1,7 @@
 'use strict';
 
 const fetch = require('node-fetch');
-let url = 'https://api.barcodelookup.com/v2/';
+let baseUrl = 'https://api.barcodelookup.com/v2/';
 
 module.exports = {
     /**
@@ -11,7 +11,7 @@ module.exports = {
      * is response payload, statusCode is response status code.
      */
     rateLimits: ({ key: key }) => {
-        url += 'rate-limits?key=' + key;
+        let url = baseUrl + 'rate-limits?key=' + key;
 
         return fetch(url)
             .then((response) => {
@@ -62,7 +62,7 @@ module.exports = {
         key: key
     }) => {
 
-        url += 'products?';
+        let url = baseUrl + 'products?';
 
         if (
             barcode &&
