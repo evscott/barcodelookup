@@ -8,6 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eliot Scott",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evscott/barcodelookup"
+  },
   "license": "ISC",
   "devDependencies": {
     "eslint-config-prettier": "^4.2.0",
